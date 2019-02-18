@@ -1,15 +1,11 @@
 pipeline {
-    agent any 
+    agent none 
     stages {
         stage('Deploy') { 
-            steps {
-                build job: '../dicky-deploy-service', parameters: []
-            }
+            build job: '../dicky-deploy-service'
         }
         stage('Configure') { 
-            steps {
-                build job: '../dicky-configure-kong', parameters: []
-            }
+            build job: '../dicky-configure-kong'
         }
     }
 }
