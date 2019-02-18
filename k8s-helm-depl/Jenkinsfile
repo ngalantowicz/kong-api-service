@@ -1,0 +1,9 @@
+node {
+  checkout scm
+  stage('Deploy') {
+    build job: '../dicky-deploy-service', parameters: []
+  }
+  stage('Configure') {
+    build job: '../dicky-configure-kong', parameters: []
+  }
+}
