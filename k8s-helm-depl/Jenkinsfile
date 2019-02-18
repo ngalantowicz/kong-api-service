@@ -1,9 +1,15 @@
-node {
-  checkout scm
-  stage('Deploy') {
-    build job: '../dicky-deploy-service', parameters: []
-  }
-  stage('Configure') {
-    build job: '../dicky-configure-kong', parameters: []
-  }
+pipeline {
+    agent any 
+    stages {
+        stage('Deploy') { 
+            steps {
+                build job: '../dicky-deploy-service', parameters: []
+            }
+        }
+        stage('Configure') { 
+            steps {
+                build job: '../dicky-configure-kong', parameters: []
+            }
+        }
+    }
 }
