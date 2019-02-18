@@ -1,0 +1,27 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-ui
+  labels:
+    app: {{ .Release.Name }}-ui
+spec:
+  replicas: {{ .Values.uiReplicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Release.Name }}
+        ports:
+        - containerPort: {{ .Values.apiPort }}
+        image: {{ .Values.name }}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "5m"
+      nodeSelector:
+        env: {{ .Values.webEnv }}

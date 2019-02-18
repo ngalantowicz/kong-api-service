@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  dong-kong:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    image: dong-kong:local
+    container_name: dong-kong-cont
+    networks:
+      - db_local-bakery
+    ports:
+      - 8041:8041
+    volumes:
+      - ../:/dong-kong
+    command: npm start

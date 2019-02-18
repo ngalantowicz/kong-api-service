@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "mock-ams-kong.fullname" . }}
+  labels:
+    app: {{ template "mock-ams-kong.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "mock-ams-kong.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "mock-ams-kong.name" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.Name}}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "5m"
+      nodeSelector:
+        name: minikube
+
