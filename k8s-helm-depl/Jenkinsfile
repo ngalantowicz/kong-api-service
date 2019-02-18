@@ -4,6 +4,6 @@ node {
     build job: '../dicky-deploy-service', parameters: []
   }
   stage('Configure') {
-    build job: '../dicky-configure-kong', parameters: []
+    build job: '../dicky-confgure-kong', parameters: []
   }
 }
