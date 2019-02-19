@@ -4,7 +4,7 @@ pipeline {
         stage('Update Source Code') { 
             steps {
                 sh 'cd /opt/dicky/kong-service/'
-                sh 'git pull'
+                sh 'git pull origin master'
             }
         }
         stage('Deploy') { 
