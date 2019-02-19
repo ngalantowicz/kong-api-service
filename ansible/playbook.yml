@@ -11,5 +11,8 @@
       group: root
       mode: 0640
 
-  - name: Copy Api Service Files
-    raw: cd /opt/dicky/kong-service/ && npm i && nohup npm start &
+  - name: Install node packages
+    raw: cd /opt/dicky/kong-service/ && npm i
+
+  - name: Start Api
+    raw: cd /opt/dicky/kong-service/ && nohup npm start &
