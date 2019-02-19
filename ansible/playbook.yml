@@ -12,4 +12,4 @@
       mode: 0640
 
   - name: Copy Api Service Files
-    raw: cd /opt/dicky/kong-service/ && npm i && nohup & npm start
+    raw: cd /opt/dicky/kong-service/ && npm i && nohup npm start &
