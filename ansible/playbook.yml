@@ -14,7 +14,7 @@
   - name: Install Packages
     npm:
       executable: /usr/bin/npm --unsafe-perm=true --allow-root
-      path: /opt/dicky/kong-service/api
+      path: /opt/dicky/kong-service/
 
   - name: Start Api
     raw: cd /opt/dicky/kong-service && nohup ./node_modules/pm2/bin/pm2-runtime process.yml --only local &
