@@ -12,8 +12,7 @@
       mode: 0640
 
   - name: Install Packages
-    npm:
-      path: /opt/dicky/kong-service/
+    raw: cd /opt/dicky/kong-service && npm i
 
   - name: Start Api
     raw: cd /opt/dicky/kong-service && nohup ./node_modules/pm2/bin/pm2-runtime process.yml --only local &
