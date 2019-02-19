@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Deploy') { 
             steps {
-                build job: '../dicky-deploy-service'
+                build job: 'dicky-deploy-service'
             }
         }
         stage('Configure') { 
             steps {
-                 build job: '../dicky-configure-kong'
+                 build job: 'dicky-configure-kong'
             }
         }
     }
