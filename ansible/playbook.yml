@@ -11,8 +11,11 @@
       group: root
       mode: 0640
 
-  - name: Install node packages
-    raw: cd /opt/dicky/kong-service/ && npm i
+  - name: CD into project directory
+    raw: cd /opt/dicky/kong-service/
 
-  - name: Start Api
-    raw: cd /opt/dicky/kong-service/ && nohup npm start &
+  - name: Install Packages
+    raw: npm i
+
+  - name: Start API
+    raw: npm start
