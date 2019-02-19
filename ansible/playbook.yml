@@ -12,10 +12,10 @@
       mode: 0640
 
   - name: CD into project directory
-    raw: cd /opt/dicky/kong-service/
+    raw: cd /opt/dicky/kong-service/api/
 
   - name: Install Packages
     raw: npm i
 
   - name: Start API
-    raw: npm start
+    raw: nohup npm start &
