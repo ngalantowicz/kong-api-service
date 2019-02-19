@@ -4,7 +4,7 @@
   tasks:
   - name: Copy Api Service Files
     become: true
-      copy:
+    copy:
       src: ../api/
       dest: /opt/dicky/kong-service/
       owner: root
