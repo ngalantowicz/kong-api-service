@@ -9,4 +9,4 @@
       dest: /opt/dicky/kong-service/
       owner: root
       group: root
-      mode: 0700
+      mode: 0640
