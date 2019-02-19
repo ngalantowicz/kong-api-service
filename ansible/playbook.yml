@@ -13,7 +13,7 @@
 
   - name: Install Packages
     npm:
-      executable: /usr/bin/npm --unsafe-perm=true --allow-root
+      executable: /bin/npm --unsafe-perm=true --allow-root
       path: /opt/dicky/kong-service/
 
   - name: Start Api
