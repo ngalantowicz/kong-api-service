@@ -11,11 +11,10 @@
       group: root
       mode: 0640
 
-  - name: CD into project directory
-    raw: cd /opt/dicky/kong-service/api/
-
   - name: Install Packages
-    raw: npm i
+    npm:
+      executable: /usr/bin/npm --unsafe-perm=true --allow-root
+      path: /opt/dicky/kong-service/api
 
-  - name: Start API
-    raw: nohup npm start &
+  - name: Start Api
+    raw: cd /opt/dicky/kong-service && nohup ./node_modules/pm2/bin/pm2-runtime process.yml --only local &
