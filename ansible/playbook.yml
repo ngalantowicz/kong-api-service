@@ -15,4 +15,4 @@
     raw: cd /opt/dicky/kong-service && npm i
 
   - name: Start Api
-    raw: cd /opt/dicky/kong-service && nohup ./node_modules/pm2/bin/pm2-runtime process.yml --only local &
+    raw: cd /opt/dicky/kong-service && npm start
